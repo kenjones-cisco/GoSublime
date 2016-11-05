@@ -296,7 +296,7 @@ def env(m={}):
 		try:
 			uenv[k] = string.Template(uenv[k]).safe_substitute(e)
 		except Exception as ex:
-			gs.println('%s: Cannot expand env var `%s`: %s' % (NAME, k, ex))
+			gs.println('%s: Cannot expand env var `%s`: %s' % (gs.NAME, k, ex))
 
 	e.update(uenv)
 	e.update(m)
@@ -371,7 +371,7 @@ def env(m={}):
 		try:
 			clean_env[gs.astr(k)] = gs.astr(v)
 		except Exception as ex:
-			gs.println('%s: Bad env: %s' % (NAME, ex))
+			gs.println('%s: Bad env: %s' % (gs.NAME, ex))
 
 	return clean_env
 
